@@ -56,7 +56,7 @@ const Navigation = () => {
               className="text-xl font-heading font-bold hover:bg-transparent p-0"
               onClick={() => scrollToSection('#home')}
             >
-              <span className="gradient-text">DhatriK</span>
+              <span className="gradient-text">Dhatrik</span>
             </Button>
           </motion.div>
 
@@ -91,7 +91,7 @@ const Navigation = () => {
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="h-6 w-6 mr-4" /> : <Menu className="h-6 w-6 mr-4" />}
             </Button>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ const Navigation = () => {
             transition={{ duration: 0.3 }}
             className="md:hidden mt-4 pt-4 border-t border-border"
           >
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2.5 bg-[#FEEFC6] -mt-4 mr-7">
               {navItems.map((item) => (
                 <Button
                   key={item.name}
