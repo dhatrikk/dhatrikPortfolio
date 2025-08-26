@@ -166,7 +166,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Email</h4>
-                  <p className="text-muted-foreground">dhatrik.kumar@example.com</p>
+                  <p className="text-muted-foreground">dhatrikkr@gmail.com</p>
                 </div>
               </div>
             </Card>
@@ -178,7 +178,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground">Location</h4>
-                  <p className="text-muted-foreground">IIT Kharagpur, West Bengal, India</p>
+                  <p className="text-muted-foreground">IIT Kharagpur,Kharagpur, West Bengal, India</p>
                 </div>
               </div>
             </Card>

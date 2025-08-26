@@ -20,7 +20,7 @@ const Footer = () => {
               className="mb-8"
             >
               <h3 className="text-2xl font-heading font-bold mb-4">
-                <span className="gradient-text">DhatriK Kumar</span>
+                <span className="gradient-text">Dhatrik Kumar</span>
               </h3>
               <p className="text-muted-foreground max-w-md mx-auto">
                 Building innovative solutions with modern technologies. 
@@ -39,7 +39,7 @@ const Footer = () => {
                 variant="outline"
                 size="icon"
                 className="border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                onClick={() => window.open('https://github.com/dhatrik-kumar', '_blank')}
+                onClick={() => window.open('https://github.com/dhatrikk', '_blank')}
               >
                 <Github className="h-5 w-5" />
               </Button>
@@ -47,7 +47,7 @@ const Footer = () => {
                 variant="outline"
                 size="icon"
                 className="border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                onClick={() => window.open('https://linkedin.com/in/dhatrik-kumar', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/dhatrik-kumar-9ab249256/', '_blank')}
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
@@ -55,7 +55,7 @@ const Footer = () => {
                 variant="outline"
                 size="icon"
                 className="border-primary/20 hover:border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                onClick={() => window.location.href = 'mailto:dhatrik.kumar@example.com'}
+                onClick={() => window.location.href = 'mailto:dhatrikkr@gmail.com'}
               >
                 <Mail className="h-5 w-5" />
               </Button>
@@ -69,7 +69,7 @@ const Footer = () => {
               className="flex items-center justify-between w-full border-t border-border pt-8"
             >
               <p className="text-muted-foreground text-sm">
-                © 2025 DhatriK Kumar. All rights reserved.
+                © 2025 Dhatrik Kumar. All rights reserved.
               </p>
               
               <Button

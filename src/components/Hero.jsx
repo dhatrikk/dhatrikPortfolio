@@ -33,7 +33,7 @@ const Hero = () => {
               <div className="relative w-40 h-40 mx-auto mb-6">
                 <img 
                   src={profilePicture}
-                  alt="DhatriK Kumar"
+                  alt="Dhatrik Kumar"
                   className="w-full h-full object-cover rounded-full border-4 border-primary shadow-2xl"
                 />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
@@ -45,7 +45,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <span className="gradient-text">DhatriK</span>{" "}
+              <span className="gradient-text">Dhatrik</span>{" "}
               <span className="text-foreground">Kumar</span>
             </motion.h1>
             
