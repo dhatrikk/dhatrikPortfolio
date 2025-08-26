@@ -88,7 +88,7 @@ const Hero = () => {
                 variant="outline" 
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => window.open('www.linkedin.com/in/dhatrik-kumar-9ab249256', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/dhatrik-kumar-9ab249256', '_blank')}
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
                 LinkedIn
