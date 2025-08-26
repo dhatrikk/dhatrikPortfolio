@@ -66,7 +66,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              I am a Dual Degree student (B.Tech + M.Tech) in Mining Engineering at IIT Kharagpur, 
+              I am a Dual Degree student (B.Tech + M.Tech) at IIT Kharagpur, 
               passionate about web development, AI-driven applications, and entrepreneurship. 
               I specialize in building responsive, scalable, and modern web solutions.
             </motion.p>
@@ -88,7 +88,7 @@ const Hero = () => {
                 variant="outline" 
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => window.open('https://linkedin.com/in/dhatrik-kumar', '_blank')}
+                onClick={() => window.open('www.linkedin.com/in/dhatrik-kumar-9ab249256', '_blank')}
               >
                 <ExternalLink className="mr-2 h-5 w-5" />
                 LinkedIn
