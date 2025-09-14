@@ -1,99 +1,66 @@
-import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Code, Database, Globe, Cpu, GitBranch, Cloud } from "lucide-react";
+// src/components/Skills/Skills.jsx
+import React from "react";
+import { SkillsInfo } from "../constants";
+import Tilt from "react-parallax-tilt";
 
-const skillsData = [
-  {
-    category: "Languages",
-    icon: <Code className="h-6 w-6" />,
-    skills: ["C", "C++", "HTML", "CSS", "JavaScript", "Python"]
-  },
-  {
-    category: "Frameworks & Libraries",
-    icon: <Globe className="h-6 w-6" />,
-    skills: ["React", "Next.js", "Node.js", "Express", "Tailwind CSS", "Socket.IO"]
-  },
-  {
-    category: "Databases & Tools",
-    icon: <Database className="h-6 w-6" />,
-    skills: ["MongoDB", "Firebase", "Mongoose", "JWT"]
-  },
-  {
-    category: "APIs & AI Tools",
-    icon: <Cpu className="h-6 w-6" />,
-    skills: ["Google Gemini API", "Vapi SDK"]
-  },
-  {
-    category: "Development Tools",
-    icon: <GitBranch className="h-6 w-6" />,
-    skills: ["Git", "GitHub", "Postman", "Jupyter Notebook"]
-  },
-  {
-    category: "Platforms",
-    icon: <Cloud className="h-6 w-6" />,
-    skills: ["Vercel", "Render", "Firebase Console"]
-  }
-];
+const Skills = () => (
+  <section
+    id="skills"
+    className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[20vw] font-sans bg-skills-gradient clip-path-custom"
+  >
+    {/* Section Title */}
+    <div className="text-center mb-8">
+      <h2 className="text-3xl sm:text-4xl font-bold text-white">SKILLS</h2>
+      <div className="w-24 h-1 bg-[#8245ec] mx-auto mt-2"></div>
+      <p className="text-gray-400 mt-4 text-lg font-semibold">
+      A collection of my technical skills and expertise honed through various projects and experiences
+      </p>
+    </div>
 
-const Skills = () => {
-  return (
-    <section className="py-20 section-padding bg-secondary/30">
-      <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+    {/* Skill Categories */}
+    <div className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
+      {SkillsInfo.map((category) => (
+        <div
+          key={category.title}
+          className="bg-gray-900 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-white 
+          shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]"
         >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            <span className="gradient-text">Technical Skills</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive technology stack for modern web development
-          </p>
-        </motion.div>
+          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
+            {category.title}
+          </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillsData.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="glass-card p-6 h-full hover:shadow-xl transition-all duration-300 group">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-primary/10 p-3 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
-                    {category.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {category.category}
-                  </h3>
+          {/* Skill Items - 3 per row on larger screens */}
+          <Tilt
+            key={category.title}
+            tiltMaxAngleX={20}
+            tiltMaxAngleY={20}
+            perspective={1000}
+            scale={1.05}
+            transitionSpeed={1000}
+            gyroscope={true}
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 w-full">
+              {category.skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 w-32 text-center"
+                >
+                  <img
+                    src={skill.logo}
+                    alt={`${skill.name} logo`}
+                    className="w-6 h-6 sm:w-8 sm:h-8"
+                  />
+                  <span className="text-xs sm:text-sm text-gray-300">
+                    {skill.name}
+                  </span>
                 </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.span
-                      key={skillIndex}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: (index * 0.1) + (skillIndex * 0.05) }}
-                      viewport={{ once: true }}
-                      className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium hover:bg-primary/20 transition-colors duration-200 cursor-default"
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+              ))}
+            </div>
+          </Tilt>
         </div>
-      </div>
-    </section>
-  );
-};
+      ))}
+    </div>
+  </section>
+);
 
 export default Skills;

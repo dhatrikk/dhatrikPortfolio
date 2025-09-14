@@ -1,108 +1,97 @@
-import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Briefcase, Users, TrendingUp, Award } from "lucide-react";
+import React from "react";
+import { experiences } from "../constants"; // Import your data
+import { Link, Link as LinkIcon } from "lucide-react";
 
 const Experience = () => {
   return (
-    <section className="py-20 section-padding bg-secondary/30">
-      <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4">
-            <span className="gradient-text">Entrepreneurial Experience</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Leading innovative solutions and building impactful businesses
-          </p>
-        </motion.div>
+    <section
+      id="experience"
+      className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-2"
+    >
+      {/* Section Title */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-white">EXPERIENCE</h2>
+        <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
+        <p className="text-gray-400 mt-4 text-lg font-semibold">
+          A collection of my work experience and the roles I have taken in
+          various organizations
+        </p>
+      </div>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+      {/* Experience Timeline */}
+      <div className="relative">
+        {/* Vertical line */}
+        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+
+        {/* Experience Entries */}
+        {experiences.map((experience, index) => (
+          <div
+            key={experience.id}
+            className={`flex flex-col sm:flex-row items-center mb-16 ${
+              index % 2 === 0 ? "sm:justify-end" : "sm:justify-start"
+            }`}
           >
-            <Card className="glass-card p-8 hover:shadow-2xl transition-all duration-500 border-l-4 border-l-primary">
-              <div className="flex items-start gap-6">
-                <div className="bg-primary/10 p-4 rounded-xl">
-                  <Briefcase className="h-8 w-8 text-primary" />
+            {/* Content Section */}
+            <div
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
+                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
+              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
+            >
+              {/* Flex container for image and text */}
+              <div className="flex items-center space-x-6">
+                {/* Company Logo/Image */}
+                <div className="w-16 h-16 bg-white rounded-md overflow-hidden">
+                  <img
+                    src={experience.img}
+                    alt={experience.company}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                
-                <div className="flex-1">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2">
-                        Co-Founder - Zeppy Rides
-                      </h3>
-                      <p className="text-lg text-primary font-semibold">
-                        Women-led bike taxi startup
-                      </p>
-                    </div>
-                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
-                      Current
-                    </Badge>
+
+                {/* Role, Company Name, and Date */}
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                      {experience.role}
+                    </h3>
+                    <h4 className="text-md sm:text-sm text-gray-300 flex items-center gap-2">
+  {experience.company}
+  {experience.link && (
+    <a
+      href={experience.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-400 hover:text-blue-500"
+    >
+      <LinkIcon size={14} />
+    </a>
+  )}
+</h4>
                   </div>
-                  
-                  <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    Building safe, reliable daily commute solutions for women through innovative 
-                    bike taxi services. Leading strategic initiatives across operations, technology, 
-                    and market outreach.
+                  {/* Date at the bottom */}
+                  <p className="text-sm text-gray-500 mt-2">
+                    {experience.date}
                   </p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="bg-yellow/10 p-2 rounded-lg">
-                        <Award className="h-5 w-5 text-yellow" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Top 25/2000+</p>
-                        <p className="text-sm text-muted-foreground">EMPRESARIO 2025</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="bg-yellow/10 p-2 rounded-lg">
-                        <Users className="h-5 w-5 text-yellow" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Team of 10</p>
-                        <p className="text-sm text-muted-foreground">Cross-functional</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <div className="bg-yellow/10 p-2 rounded-lg">
-                        <TrendingUp className="h-5 w-5 text-yellow" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Growth Focus</p>
-                        <p className="text-sm text-muted-foreground">Market Expansion</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {['Leadership', 'Strategy', 'Operations', 'Technology', 'Team Management'].map((skill, index) => (
-                      <span 
-                        key={index}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
-            </Card>
-          </motion.div>
-        </div>
+
+              <p className="mt-4 text-gray-400">{experience.desc}</p>
+              <div className="mt-4">
+                <h5 className="font-medium text-white">Skills:</h5>
+                <ul className="flex flex-wrap mt-2">
+                  {experience.skills.map((skill, index) => (
+                    <li
+                      key={index}
+                      className="bg-[#8245ec] text-gray-300 px-4 py-1 text-xs sm:text-sm rounded-lg mr-2 mb-2 border border-gray-400"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

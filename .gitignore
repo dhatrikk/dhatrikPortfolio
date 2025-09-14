@@ -1,44 +1,72 @@
-# Node modules
-node_modules/
-
-# Build output
-dist/
-build/
-
-# Dependency directories
-jspm_packages/
-
 # Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-bun.lockb
+lerna-debug.log*
 
-# Local environment files
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build outputs
+dist
+dist-ssr
+build/
+.cache/
+.next/
+.nuxt/
+out/
+temp/
+
+# Environment files
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+
+# Local configuration
+*.local
+*.secret
 
 # Editor directories and files
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 .idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# Mac system files
 .DS_Store
 
-# Cache
-.cache/
-.next/
-out/
-*.tsbuildinfo
+# OS files
+Thumbs.db
 
-# Optional: lockfiles (if you want to ignore them)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn v2+
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
