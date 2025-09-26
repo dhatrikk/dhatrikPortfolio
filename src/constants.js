@@ -196,8 +196,8 @@ export const projects = [
     "A dynamic MERN whiteboard app with drawing tools, text, shapes, and undo/redo powered by Context API. Features real-time collaboration using Socket.IO with sub-second latency, secure JWT authentication, and optimized MongoDB queries for fast API responses. Deployed frontend on Vercel and backend on Render for scalable performance and high availability.",
   image: whiteBoard,
   tags: ["MERN", "React JS", "HTML5 Canvas", "Tailwind CSS", "Socket.IO", "JWT", "MongoDB", "Vercel", "Render"],
-  github: "https://github.com/dhatrikk",  
-  webapp: "https://yourwhiteboardapp.vercel.app/",
+  github: "https://github.com/dhatrikk/whiteBoard",  
+  webapp: "https://canvaswhiteboard.vercel.app/",
 }
 ,
   {
@@ -207,7 +207,7 @@ export const projects = [
     "A full-stack MERN Expense Tracker with secure authentication, allowing users to log, manage, and track expenses. Features intuitive dashboards with Ant Design, offering both tabular and interactive graph views. Built with scalable REST APIs and MongoDB for reliable CRUD operations and smooth performance.",
   image: expenseTracker,
   tags: ["MERN", "React JS", "Ant Design", "MongoDB", "Express", "Node.js", "REST API", "Charts"],
-  github: "https://github.com/dhatrikk",  
-  webapp: "https://yourexpensetracker.vercel.app/",
+  github: "https://github.com/dhatrikk/expenseTracker",  
+  webapp: "https://expensestrak.vercel.app/",
 }
 ];
